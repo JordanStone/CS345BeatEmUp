@@ -35,7 +35,12 @@ public class CharController : MonoBehaviour{
 		}
 
 		if(Input.GetButtonDown("Fire1") && grounded){ //Roll
-			rigidbody2D.AddForce(new Vector2(rollForce, 0f));
+			if (right){
+				rigidbody2D.AddForce(new Vector2(rollForce, 0f));
+			}else{
+				rigidbody2D.AddForce(new Vector2(-rollForce, 0f));
+			}
+			
 			roll = true;
 		}
 
