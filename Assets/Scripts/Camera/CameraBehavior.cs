@@ -3,17 +3,17 @@ using System.Collections;
 
 public class CameraBehavior : MonoBehaviour {
 
-	public float dampTime = 0.15f;
+	public float dampTime = 0.5f;
 	private Vector3 velocity = Vector3.zero;
 	public Transform target;
 	public float posX = 0.5f;
 	public float posY = 0.5f;
-	public float positionZModifier = 5f;
+	public float positionZModifier = -10f;
 	public bool lockActive = false;
 	public bool lockSet = false;
 	protected float xLockMin;
 	protected float xLockMax;
-	public float cameraOffset = 6.0f; 
+	public float cameraOffset = 9.0f; 
 
 	// Use this for initialization
 	void Start () {
