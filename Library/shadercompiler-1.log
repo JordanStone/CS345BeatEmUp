@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Base path: /Applications/Unity/Unity.app/Contents
 Pipe name: \\.\pipe\UnityShaderCompiler-1--1594560088
 Cmd: getPlatforms
@@ -7,3 +8,10 @@ Cmd: compileSnippet
   api=0 type=0 insize=1020 outsize=397 kw= ok=1
 Cmd: compileSnippet
   api=0 type=1 insize=1020 outsize=290 kw= ok=1
+=======
+Base path: C:/Program Files (x86)/Unity/Editor/Data
+Pipe name: \\.\pipe\UnityShaderCompiler-1-57632
+Cmd: getPlatforms
+Cmd: preprocess
+  insize=1812 outsize=1056 ok=1
+>>>>>>> FETCH_HEAD
