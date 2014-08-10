@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 365eab0ae6b64964fa31ad97c7f79d9c
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: RollTest
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
