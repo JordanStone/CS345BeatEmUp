@@ -1,6 +1,17 @@
 fileFormatVersion: 2
 guid: 7f24cfeb8976ce34eaaebcdee0842db9
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Roll_0
+    21300002: Roll_1
+    21300004: Roll_2
+    21300006: Roll_3
+    21300008: Roll_4
+    21300010: Roll_5
+    21300012: Roll_6
+    21300014: Roll_7
+    21300016: Roll_8
+    21300018: Roll_9
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
