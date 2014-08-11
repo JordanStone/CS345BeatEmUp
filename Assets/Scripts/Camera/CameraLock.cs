@@ -17,7 +17,7 @@ public class CameraLock : MonoBehaviour {
 	
 	}
 
-	void OnCollisionEnter2D(Collision2D crash)
+	void OnCollisionEnter()
 	{
 		mCamera.transform.GetComponent<CameraBehavior>().lockActive = true;
 		Destroy(this.gameObject);

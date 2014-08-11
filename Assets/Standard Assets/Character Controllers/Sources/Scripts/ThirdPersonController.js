@@ -92,7 +92,7 @@ private var isControllable = true;
 
 function Awake ()
 {
-	moveDirection = transform.TransformDirection(Vector3.forward);
+	moveDirection = transform.TransformDirection(Vector3.right);
 	
 	_animation = GetComponent(Animation);
 	if(!_animation)
@@ -130,28 +130,29 @@ function UpdateSmoothedMovementDirection ()
 	var grounded = IsGrounded();
 	
 	// Forward vector relative to the camera along the x-z plane	
-	var forward = cameraTransform.TransformDirection(Vector3.forward);
+	var forward = cameraTransform.TransformDirection(Vector3.right); //Face character right
 	forward.y = 0;
 	forward = forward.normalized;
 
 	// Right vector relative to the camera
 	// Always orthogonal to the forward vector
-	var right = Vector3(forward.z, 0, -forward.x);
-
-	var v = Input.GetAxisRaw("Vertical");
+	//var right = Vector3(forward.z, 0, -forward.x);
+	//var right = Vector3(forward.x, 0, -forward.x);
+	//var v = Input.GetAxisRaw("Vertical");
 	var h = Input.GetAxisRaw("Horizontal");
 
 	// Are we moving backwards or looking backwards
-	if (v < -0.2)
+	if (h < -0.2)
 		movingBack = true;
 	else
 		movingBack = false;
 	
 	var wasMoving = isMoving;
-	isMoving = Mathf.Abs (h) > 0.1 || Mathf.Abs (v) > 0.1;
+	//isMoving = Mathf.Abs (h) > 0.1 || Mathf.Abs (v) > 0.1;
+	isMoving = Mathf.Abs (h) > 0.1; //only care about the vertical, apparently
 		
 	// Target direction relative to the camera
-	var targetDirection = h * right + v * forward;
+	var targetDirection = h * forward; //var targetDirection = h * forward; only move the character on the horizontal axis
 	
 	// Grounded controls
 	if (grounded)
@@ -174,7 +175,7 @@ function UpdateSmoothedMovementDirection ()
 			// Otherwise smoothly turn towards it
 			else
 			{
-				moveDirection = Vector3.RotateTowards(moveDirection, targetDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000);
+				//moveDirection = Vector3.RotateTowards(moveDirection, targetDirection, rotateSpeed * Mathf.Deg2Rad * Time.deltaTime, 1000);
 				
 				moveDirection = moveDirection.normalized;
 			}
@@ -310,7 +311,7 @@ function Update() {
 	ApplyJumping ();
 	
 	// Calculate actual motion
-	var movement = moveDirection * moveSpeed + Vector3 (0, verticalSpeed, 0) + inAirVelocity;
+	var movement = moveDirection * moveSpeed + Vector3 (0, verticalSpeed, 0) + inAirVelocity; //oveDirection * moveSpeed + Vector3 (0, verticalSpeed, 0) + inAirVelocity;
 	movement *= Time.deltaTime;
 	
 	// Move the controller
