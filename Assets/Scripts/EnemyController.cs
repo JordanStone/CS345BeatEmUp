@@ -39,6 +39,14 @@ public class EnemyController : MonoBehaviour{
 //		transform.eulerAngles = new Vector3(0, 0, 0);
 		
 		//move towards the player
+
+		if(target.position.x > enemyTransform.position.x)
+		{
+		enemyTransform.position += enemyTransform.right * speed * Time.deltaTime;
+		}
+		else{
+			enemyTransform.position -= enemyTransform.right * speed * Time.deltaTime;
+		}
 		
 
 		
