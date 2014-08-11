@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\CharacterController\CharController3D.cs" />
      <Compile Include="Assets\Scripts\CharacterController\KeyCombo.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
+     <Compile Include="Assets\Scripts\EnemyScripts\Colliding.cs" />
+     <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />
      <Compile Include="Assets\Scripts\SpawnerScript.cs" />
      <Compile Include="Assets\Scripts\WallScripts\Wallbehavior.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />

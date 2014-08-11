@@ -37,11 +37,18 @@ public class EnemyController : MonoBehaviour{
 		
 		//rotate to look at the player
 		
-		transform.rotation = Quaternion.LookRotation(targetDirection); // Converts target direction vector to Quaternion
-		transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+		//transform.rotation = Quaternion.LookRotation(targetDirection); // Converts target direction vector to Quaternion
+		//transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
 		
 		//move towards the player
-		enemyTransform.position += enemyTransform.forward * speed * Time.deltaTime;
+		if(target.position.x > enemyTransform.position.x)
+		{
+			enemyTransform.position += enemyTransform.right * speed * Time.deltaTime;
+		}
+		else{
+			enemyTransform.position -= enemyTransform.right * speed * Time.deltaTime;
+		}
+		
 
 		
 	}

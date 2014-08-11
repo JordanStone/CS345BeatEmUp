@@ -4,6 +4,8 @@ public class CameraLock : MonoBehaviour {
 	public GameObject mCamera;
 	public int numEnemies = 2;
 	public float enemyOffset = 5;
+	protected GameObject enemies;
+	protected bool active = false;
 	//protected GameObject LockandRoll;
 	// Use this for initialization
 
@@ -12,10 +14,21 @@ public class CameraLock : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
+
+		if(active)
+		{
+			if(enemies == null)
+			{
+				Debug.Log("Enemies null!");
+				mCamera.transform.GetComponent<CameraBehavior>().lockActive = false;
+				Destroy(this.gameObject);
+			}
+		}
 	
 	}
 
 	void OnCollisionEnter2D(Collision2D crash){
+		
 		mCamera.transform.GetComponent<CameraBehavior>().lockActive = true;
 		for(int i=1; i <= numEnemies; i++)
 		{
@@ -26,7 +39,10 @@ public class CameraLock : MonoBehaviour {
 			}
 			spawnEnemy(xDistance);
 		}
-		Destroy(this.gameObject);
+		enemies = GameObject.FindWithTag("Enemy");
+		//Destroy(this.gameObject);
+		this.gameObject.layer = 12;
+		active = true;
 	}
 
 	void spawnEnemy(float distance){

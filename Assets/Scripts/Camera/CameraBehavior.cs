@@ -15,14 +15,22 @@ public class CameraBehavior : MonoBehaviour {
 	public float cameraOffset = 9.0f;
 	protected Vector3 tempOffset;
 	protected Vector3 tempDest;
+	protected Vector3 startDest;
 	public float lockDistance = 5f;
 
 	// Use this for initialization
 	void Start () {
 		transform.position -= new Vector3(0, 0, zDistance);
+		startDest = transform.position;
 	}
 	// Update is called once per frame
 	void Update () {
+		if(!lockActive){
+			if(transform.position.z < startDest.z)
+			{
+				transform.position += new Vector3(0, 0, cameraSpeed * Time.deltaTime);
+			}
+		}
 		if(target && !lockActive){
 			Vector3 point = camera.WorldToViewportPoint(target.position);
 //			Debug.Log("Target.pos.Z = " + target.position.z);

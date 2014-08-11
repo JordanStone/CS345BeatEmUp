@@ -8,6 +8,7 @@ using System.Collections;
 public class CharController : MonoBehaviour{
 
 	public float maxSpeed = 5; //Max speed value allowed
+	public int damage = 10;
 	public Animator anim; //Will be implemented once we have animations
 	
 	bool right = true; //What Direction Is Player Facing
@@ -146,6 +147,11 @@ public class CharController : MonoBehaviour{
 		Vector3 scale = transform.localScale;
 		scale.x = scale.x * -1;
 		transform.localScale = scale;
+	}
+
+	public int getDamage()
+	{
+		return damage;
 	}
 
 }

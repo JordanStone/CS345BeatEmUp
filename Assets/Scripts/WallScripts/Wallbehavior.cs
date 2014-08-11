@@ -15,6 +15,6 @@ public class Wallbehavior : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		col.gameObject.rigidbody2D.AddForce(col.gameObject.rigidbody2D.velocity * -10000);
+		//col.gameObject.rigidbody2D.AddForce(col.gameObject.rigidbody2D.velocity * -10000);
 	}
 }
