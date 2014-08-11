@@ -295,10 +295,11 @@ function Update() {
 		Input.ResetInputAxes();
 	}
 
-	if (Input.GetButtonDown ("Jump"))
+	if (Input.GetButtonDown ("Jump")) //Jump
 	{
 		lastJumpButtonTime = Time.time;
 	}
+
 
 	UpdateSmoothedMovementDirection();
 	

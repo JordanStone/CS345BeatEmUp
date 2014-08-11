@@ -21,7 +21,7 @@ public class CharController : MonoBehaviour{
 	public float jumpForce = 300f; //Max amount of jump force given
 
 	bool roll = false; //Is player rolling
-	public float rollForce = 5000f; //Roll force given
+	public float rollForce = 50f; //Roll force given
 
 	int punch = 0; //Is player punching. Int used to allow easy checking of punch states (combos, etc)
 	//0 = Idle/Not Punching
@@ -46,8 +46,10 @@ public class CharController : MonoBehaviour{
 		if(Input.GetButtonDown("Fire1") && grounded){ //Roll
 			if (right){
 				rigidbody2D.AddForce(new Vector2(rollForce, 0f));
+				rigidbody2D.velocity = new Vector2(-rollForce * maxSpeed,rigidbody2D.velocity.y + 1);
 			}else{
 				rigidbody2D.AddForce(new Vector2(-rollForce, 0f));
+				rigidbody2D.velocity = new Vector2(rollForce * maxSpeed,rigidbody2D.velocity.y + 1);
 			}
 			roll = true;
 		}
