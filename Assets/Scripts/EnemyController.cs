@@ -8,7 +8,7 @@ using System.Collections;
 public class EnemyController : MonoBehaviour{
 	
 	public float maxSpeed = 3; //Max speed value allowed
-	public Animator anim; //Will be implemented once we have animations
+//	public Animator anim; //Will be implemented once we have animations
 
 	Transform target;
 	Transform enemyTransform;
@@ -26,53 +26,48 @@ public class EnemyController : MonoBehaviour{
 
 	
 	void Start(){
-		anim = gameObject.GetComponent<Animator>(); //Will be implemented once we have animations
+//		anim = gameObject.GetComponent<Animator>(); //Will be implemented once we have animations
 		enemyTransform = this.GetComponent<Transform>();
 	}
 	
 	void Update(){
-		target = GameObject.FindWithTag ("Player").transform;
-		Vector3 targetHeading = target.position - transform.position;
-		Vector3 targetDirection = targetHeading.normalized;
+		
 		
 		//rotate to look at the player
 		
-		//transform.rotation = Quaternion.LookRotation(targetDirection); // Converts target direction vector to Quaternion
-		//transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
+//		transform.rotation = Quaternion.LookRotation(targetDirection); // Converts target direction vector to Quaternion
+//		transform.eulerAngles = new Vector3(0, 0, 0);
 		
 		//move towards the player
-		if(target.position.x > enemyTransform.position.x)
-		{
-			enemyTransform.position += enemyTransform.right * speed * Time.deltaTime;
-		}
-		else{
-			enemyTransform.position -= enemyTransform.right * speed * Time.deltaTime;
-		}
 		
 
 		
 	}
 	
 	void FixedUpdate(){
+		target = GameObject.FindWithTag ("Player").transform;
+		Vector2 targetHeading = target.position - transform.position;
+		Vector2 targetDirection = targetHeading.normalized;
+
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundType); //Are we on ground
-		anim.SetBool("ground",grounded); //Let the Animator Know
-		anim.SetFloat("vSpeed",rigidbody2D.velocity.y); //How fast are we going vertically
+//		anim.SetBool("ground",grounded); //Let the Animator Know
+//		anim.SetFloat("vSpeed",rigidbody2D.velocity.y); //How fast are we going vertically
 		
 		float move = Input.GetAxis ("Horizontal"); //Get horizontal input
 		
-		anim.SetFloat("xSpeed",Mathf.Abs(move)); //How fast are we going horizontally
+//		anim.SetFloat("xSpeed",Mathf.Abs(move)); //How fast are we going horizontally
 		
-		rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y); //Take input and move object
+		rigidbody2D.velocity = new Vector2(speed * targetDirection.x, rigidbody2D.velocity.y); //Update this to move towards player
 		
 		//Orientation
-		if (move > 0 && !right){
+		if (targetHeading.x >= 0 && !right){ //Player to the left
 			Flip();
-		}else if (move < 0 && right){
+		}else if (targetHeading.x < 0 && right){ //Player to the right
 			Flip();
 		}
 
 		if (attack) {
-			anim.SetTrigger ("attack");
+//			anim.SetTrigger ("attack");
 
 			attack = false;
 		}
