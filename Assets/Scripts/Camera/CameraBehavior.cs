@@ -17,6 +17,8 @@ public class CameraBehavior : MonoBehaviour {
 	protected Vector3 tempDest;
 	protected Vector3 startDest;
 	public float lockDistance = 5f;
+	protected GameObject wallLeft;
+	protected GameObject wallRight;
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,11 @@ public class CameraBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(!lockActive){
+			if(wallLeft != null && wallRight != null)
+			{
+				Destroy(wallLeft);
+				Destroy(wallRight);
+			}
 			if(transform.position.z < startDest.z)
 			{
 				transform.position += new Vector3(0, 0, cameraSpeed * Time.deltaTime);
@@ -44,8 +51,8 @@ public class CameraBehavior : MonoBehaviour {
 			tempDest = transform.position - tempOffset;
 			xLockMin = camera.transform.position.x - cameraOffset;
 			xLockMax = camera.transform.position.x + cameraOffset;
-			GameObject wallLeft = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
-			GameObject wallRight = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
+			wallLeft = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
+			wallRight = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
 			wallLeft.transform.position = new Vector2(xLockMin, 0);
 			wallRight.transform.position = new Vector2(xLockMax, 0);
 			lockSet = true;
