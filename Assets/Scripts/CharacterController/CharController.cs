@@ -24,6 +24,14 @@ public class CharController : MonoBehaviour{
 	bool roll = false; //Is player rolling
 	public float rollForce = 50f; //Roll force given
 
+	bool attackCool = false;
+	bool comboCool = false;
+	public float attackWait = 0.5f;
+	public float comboTime = 1.0f;
+	protected float cTimer = 0f;
+	public float cEnd = 1.0f;
+	public float timerSpeed = 0.2f;
+
 	int punch = 0; //Is player punching. Int used to allow easy checking of punch states (combos, etc)
 	//0 = Idle/Not Punching
 	//1 = Default Punch
@@ -38,13 +46,21 @@ public class CharController : MonoBehaviour{
 	}
 
 	void Update(){
+		Debug.Log("comboTimer = " + cTimer);
+		if(punch > 0)
+		{
+			comboTimerUpdate();
+		}
+		comboEnder();
 		
 		if(Input.GetButtonDown("Jump") && grounded){ //Jump
+			initiatePunch(0);
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
 			jump = true;
 		}
 
 		if(Input.GetButtonDown("Fire1") && grounded){ //Roll
+			initiatePunch(0);
 			if (right){
 				rigidbody2D.AddForce(new Vector2(rollForce, 0f));
 				rigidbody2D.velocity = new Vector2(-rollForce * maxSpeed,rigidbody2D.velocity.y + 1);
@@ -55,12 +71,21 @@ public class CharController : MonoBehaviour{
 			roll = true;
 		}
 
-		if(Input.GetButtonDown("Fire2") && !roll){ //Punch
+		if(Input.GetButtonDown("Fire2") && !roll){//Punch
+			//comboEnder();	 
+			//comboTimerUpdate();
+
+			//StartCoroutine(comboEnder());
+			punch = punch;
 
 			switch(punch){
 				case 0: //First time pressed
 					if(grounded){ //Ground Contextual Attack Types
-						punch = 1;
+						//punch = 1;
+						initiatePunch(1);
+						comboTimerReset();
+						//anim.SetInteger("punch", punch);
+						//punch=0;
 						//Apply Attack Damage Here. Probably using a method for this.
 					}else{
 						punch = 4;
@@ -69,12 +94,16 @@ public class CharController : MonoBehaviour{
 					break;
 
 				case 1: //Second time pressed
-					punch = 2;
+					//punch = 2;
+					initiatePunch(2);
+					comboTimerReset();
 					//Apply Attack Damage Here. Probably using a method for this.
 					break;
 
 				case 2: //Third Time Pressed
-					punch = 3;
+					//punch = 3;
+					initiatePunch(3);
+					comboTimerReset();
 					//Apply Attack Damage Here. Probably using a method for this.
 					break;
 			}
@@ -121,18 +150,22 @@ public class CharController : MonoBehaviour{
 		if(punch > 0){ //We have punch
 			switch(punch){
 				case 1:
+				 //anim.SetInteger("punch", 1);
+				 StartCoroutine(attackCooldown(attackWait, punch));
 					//trigger for regular punch animation
 					break;
 				case 2:
+					StartCoroutine(attackCooldown(attackWait, punch));
 					//trigger for second punch animation
 					break;
 				case 3:
+					StartCoroutine(attackCooldown(attackWait, punch));
 					//trigger for third punch animation
-					punch = 0;
+					//punch = 0;
 					break;
 				case 4:
 					//trigger for air punch animation
-					punch = 0;
+					//punch = 0;
 					break;
 			}
 		}
@@ -152,6 +185,49 @@ public class CharController : MonoBehaviour{
 	public int getDamage()
 	{
 		return damage;
+	}
+
+	IEnumerator attackCooldown(float waitTime, int p)
+	{
+		attackCool = true;
+		yield return new WaitForSeconds(waitTime);
+		if(punch == p)
+		{
+			initiatePunch(0);
+		}
+		attackCool = false;
+	}
+
+	void initiatePunch(int i)
+	{
+		punch = i;
+		anim.SetInteger("punch", punch);
+	}
+
+	void comboEnder()
+	{
+		if(cTimer >= cEnd)
+		{
+			initiatePunch(0);
+		}
+
+		/*
+		comboCool = true;
+		yield return new WaitForSeconds(comboTime);
+		comboCool = false;
+		initiatePunch(0);
+		*/
+
+	}
+
+	void comboTimerUpdate()
+	{
+		cTimer += timerSpeed * Time.deltaTime;
+
+	}
+	void comboTimerReset()
+	{
+		cTimer = 0f;
 	}
 
 }
