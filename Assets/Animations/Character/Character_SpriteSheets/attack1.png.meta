@@ -1,32 +1,6 @@
 fileFormatVersion: 2
-guid: 373061fac41b345ea94d7bc5745a8eb9
+guid: 9948ba9db6ef42f43ba8ba72335176c5
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: attack1
-    21300002: attack1_0
-    21300004: attack1_1
-    21300006: attack1_2
-    21300008: attack1_3
-    21300010: attack1_4
-    21300012: attack1_5
-    21300014: attack1_6
-    21300016: attack1_7
-    21300018: attack1_8
-    21300020: attack1_9
-    21300022: attack1_10
-    21300024: attack1_11
-    21300026: attack1_12
-    21300028: attack1_13
-    21300030: attack1_14
-    21300032: attack1_15
-    21300034: attack1_16
-    21300036: attack1_17
-    21300038: attack1_18
-    21300040: attack1_19
-    21300042: attack1_20
-    21300044: attack1_21
-    21300046: attack1_22
-    21300048: attack1_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -47,7 +21,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 4096
   textureSettings:
     filterMode: -1
     aniso: 1
