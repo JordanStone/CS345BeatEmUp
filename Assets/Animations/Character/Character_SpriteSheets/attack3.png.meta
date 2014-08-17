@@ -1,0 +1,399 @@
+fileFormatVersion: 2
+guid: 5f7b5c91172c94d7db8eba5f43fca34d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: attack3_0
+    21300002: attack3_1
+    21300004: attack3_2
+    21300006: attack3_3
+    21300008: attack3_4
+    21300010: attack3_5
+    21300012: attack3_6
+    21300014: attack3_7
+    21300016: attack3_8
+    21300018: attack3_9
+    21300020: attack3_10
+    21300022: attack3_11
+    21300024: attack3_12
+    21300026: attack3_13
+    21300028: attack3_14
+    21300030: attack3_15
+    21300032: attack3_16
+    21300034: attack3_17
+    21300036: attack3_18
+    21300038: attack3_19
+    21300040: attack3_20
+    21300042: attack3_21
+    21300044: attack3_22
+    21300046: attack3_23
+    21300048: attack3_24
+    21300050: attack3_25
+    21300052: attack3_26
+    21300054: attack3_27
+    21300056: attack3_28
+    21300058: attack3_29
+    21300060: attack3_30
+    21300062: attack3_31
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: attack3_0
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1570
+        width: 180
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_1
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1568
+        width: 180
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_2
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 1574
+        width: 180
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_3
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1578
+        width: 172
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_4
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 1578
+        width: 178
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_5
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 1582
+        width: 204
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_6
+      rect:
+        serializedVersion: 2
+        x: 2318
+        y: 1586
+        width: 236
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_7
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1590
+        width: 278
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_8
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 1598
+        width: 280
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_9
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 1606
+        width: 266
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_10
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 1146
+        width: 216
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_11
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1162
+        width: 174
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_12
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 1170
+        width: 220
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_13
+      rect:
+        serializedVersion: 2
+        x: 1194
+        y: 1110
+        width: 228
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_14
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 1088
+        width: 232
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_15
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1090
+        width: 238
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_16
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 1090
+        width: 240
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_17
+      rect:
+        serializedVersion: 2
+        x: 2722
+        y: 1087
+        width: 228
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_18
+      rect:
+        serializedVersion: 2
+        x: 3110
+        y: 1090
+        width: 216
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_19
+      rect:
+        serializedVersion: 2
+        x: 3498
+        y: 1090
+        width: 216
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_20
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 610
+        width: 219
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_21
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 618
+        width: 222
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_22
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 614
+        width: 216
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_23
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 608
+        width: 212
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_24
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 610
+        width: 206
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_25
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 606
+        width: 204
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_26
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 606
+        width: 204
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_27
+      rect:
+        serializedVersion: 2
+        x: 2714
+        y: 610
+        width: 200
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_28
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 608
+        width: 196
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_29
+      rect:
+        serializedVersion: 2
+        x: 3478
+        y: 607
+        width: 196
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_30
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 126
+        width: 198
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: attack3_31
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 122
+        width: 182
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -1,0 +1,276 @@
+fileFormatVersion: 2
+guid: 793b359001acd2349b68a67f56a14d9b
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enemy_run_0
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 1669
+        width: 303
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_1
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 1666
+        width: 303
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_2
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 1666
+        width: 302
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_3
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 1672
+        width: 311
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_4
+      rect:
+        serializedVersion: 2
+        x: 2896
+        y: 1677
+        width: 333
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_5
+      rect:
+        serializedVersion: 2
+        x: 3590
+        y: 1677
+        width: 348
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_6
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1294
+        width: 352
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_7
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 1284
+        width: 349
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_8
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 1293
+        width: 341
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_9
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 1294
+        width: 331
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_10
+      rect:
+        serializedVersion: 2
+        x: 2985
+        y: 1297
+        width: 323
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_11
+      rect:
+        serializedVersion: 2
+        x: 3671
+        y: 1293
+        width: 319
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_12
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 914
+        width: 320
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_13
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 914
+        width: 322
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_14
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 915
+        width: 326
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_15
+      rect:
+        serializedVersion: 2
+        x: 2273
+        y: 916
+        width: 334
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_16
+      rect:
+        serializedVersion: 2
+        x: 2935
+        y: 915
+        width: 345
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_17
+      rect:
+        serializedVersion: 2
+        x: 3597
+        y: 917
+        width: 351
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_18
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 530
+        width: 347
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_19
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 537
+        width: 327
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_20
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 530
+        width: 303
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_21
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 524
+        width: 303
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_run_22
+      rect:
+        serializedVersion: 2
+        x: 2897
+        y: 524
+        width: 303
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
