@@ -211,13 +211,6 @@ public class CharController : MonoBehaviour{
 			initiatePunch(0);
 		}
 
-		/*
-		comboCool = true;
-		yield return new WaitForSeconds(comboTime);
-		comboCool = false;
-		initiatePunch(0);
-		*/
-
 	}
 
 	void comboTimerUpdate()
