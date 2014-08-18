@@ -1,0 +1,1 @@
+Assets/Animations/Enemies/EnemyOne/enemyOne_spritesheets/enemy1run.anim
