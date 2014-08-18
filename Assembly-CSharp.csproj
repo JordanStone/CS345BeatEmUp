@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CharacterController\CharController.cs" />
      <Compile Include="Assets\Scripts\CharacterController\CharController3D.cs" />
      <Compile Include="Assets\Scripts\CharacterController\KeyCombo.cs" />
+     <Compile Include="Assets\Scripts\CharacterController\collisions.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\Colliding.cs" />
      <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />

@@ -46,7 +46,7 @@ public class CameraLock : MonoBehaviour {
 	}
 
 	void spawnEnemy(float distance){
-		GameObject newEnemy = (GameObject) Instantiate (Resources.Load ("placeholderEnemy"));
+		GameObject newEnemy = (GameObject) Instantiate (Resources.Load ("placeholderEnemy 1"));
 		newEnemy.layer = 10;
 		newEnemy.transform.position = new Vector2(transform.position.x + distance, transform.position.y);
 	}
