@@ -16,7 +16,12 @@ public class Colliding : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		damageTaken = col.transform.gameObject.GetComponent<CharController>().getDamage();
-		gameObject.transform.GetComponent<Health>().Damage(damageTaken);
+		if(col.transform.gameObject.tag == "PlayerAttack")
+		{
+			damageTaken = col.transform.gameObject.GetComponent<CharController>().getDamage();
+			gameObject.transform.GetComponent<Health>().Damage(damageTaken);
+
+		}
+
 	}
 }

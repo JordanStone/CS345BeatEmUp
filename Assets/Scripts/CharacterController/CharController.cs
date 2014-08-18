@@ -26,8 +26,8 @@ public class CharController : MonoBehaviour{
 
 	bool attackCool = false;
 	bool comboCool = false;
-	public float attackWait = 0.5f;
-	public float comboTime = 1.0f;
+	public float attackWait = 0.25f;
+	public float comboTime = .5f;
 	protected float cTimer = 0f;
 	public float cEnd = 1.0f;
 	public float timerSpeed = 0.2f;
@@ -76,6 +76,7 @@ public class CharController : MonoBehaviour{
 			//comboTimerUpdate();
 
 			//StartCoroutine(comboEnder());
+			gameObject.tag = "PlayerAttack";
 			punch = punch;
 
 			switch(punch){
@@ -202,6 +203,10 @@ public class CharController : MonoBehaviour{
 	{
 		punch = i;
 		anim.SetInteger("punch", punch);
+		if(i == 0)
+		{
+			gameObject.tag = "Player";
+		}
 	}
 
 	void comboEnder()

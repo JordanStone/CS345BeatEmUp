@@ -1,0 +1,296 @@
+fileFormatVersion: 2
+guid: a26d0660356839b4783b9d747cf56bee
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enemy_atk_0
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 1667
+        width: 339
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_1
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1676
+        width: 336
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_2
+      rect:
+        serializedVersion: 2
+        x: 1550
+        y: 1678
+        width: 337
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_3
+      rect:
+        serializedVersion: 2
+        x: 2230
+        y: 1682
+        width: 330
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_4
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 1687
+        width: 327
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_5
+      rect:
+        serializedVersion: 2
+        x: 3596
+        y: 1693
+        width: 335
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_6
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 1320
+        width: 340
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_7
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 1329
+        width: 337
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_8
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 1338
+        width: 329
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_9
+      rect:
+        serializedVersion: 2
+        x: 2282
+        y: 1346
+        width: 316
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_10
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 1353
+        width: 328
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_11
+      rect:
+        serializedVersion: 2
+        x: 3699
+        y: 1356
+        width: 357
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_12
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 974
+        width: 390
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_13
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 970
+        width: 383
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_14
+      rect:
+        serializedVersion: 2
+        x: 1670
+        y: 962
+        width: 371
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_15
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 953
+        width: 347
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_16
+      rect:
+        serializedVersion: 2
+        x: 3015
+        y: 944
+        width: 328
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_17
+      rect:
+        serializedVersion: 2
+        x: 3662
+        y: 928
+        width: 316
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_18
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 548
+        width: 315
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_19
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 537
+        width: 321
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_20
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 532
+        width: 324
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_21
+      rect:
+        serializedVersion: 2
+        x: 2218
+        y: 530
+        width: 290
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_22
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 529
+        width: 225
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_23
+      rect:
+        serializedVersion: 2
+        x: 3612
+        y: 521
+        width: 316
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_atk_24
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 140
+        width: 319
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

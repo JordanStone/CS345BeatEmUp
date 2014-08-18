@@ -41,6 +41,7 @@ public class Health : MonoBehaviour {
 	public void Damage(int d)
 	{
 		this.health -= d;
+		this.gameObject.rigidbody2D.AddForce(new Vector2(d * 20, 0f));
 	}
 
 }
