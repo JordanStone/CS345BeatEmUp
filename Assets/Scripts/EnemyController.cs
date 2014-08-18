@@ -55,13 +55,13 @@ public class EnemyController : MonoBehaviour{
 
 			if(randomChoice >= 1)
 			{
-				Debug.Log("ATTACK!");
+				//Debug.Log("ATTACK!");
 				Attack();
 
 			}
 			else
 			{
-				Debug.Log("Move!");
+				//Debug.Log("Move!");
 				MoveBack();
 			}
 

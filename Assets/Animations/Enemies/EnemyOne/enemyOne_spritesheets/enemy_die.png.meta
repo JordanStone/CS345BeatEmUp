@@ -1,6 +1,31 @@
 fileFormatVersion: 2
 guid: f1c6bb84dc2e4d148a9a8d75df602f01
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_die_0
+    21300002: enemy_die_1
+    21300004: enemy_die_2
+    21300006: enemy_die_3
+    21300008: enemy_die_4
+    21300010: enemy_die_5
+    21300012: enemy_die_6
+    21300014: enemy_die_7
+    21300016: enemy_die_8
+    21300018: enemy_die_9
+    21300020: enemy_die_10
+    21300022: enemy_die_11
+    21300024: enemy_die_12
+    21300026: enemy_die_13
+    21300028: enemy_die_14
+    21300030: enemy_die_15
+    21300032: enemy_die_16
+    21300034: enemy_die_17
+    21300036: enemy_die_18
+    21300038: enemy_die_19
+    21300040: enemy_die_20
+    21300042: enemy_die_21
+    21300044: enemy_die_22
+    21300046: enemy_die_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

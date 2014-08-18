@@ -1,6 +1,32 @@
 fileFormatVersion: 2
 guid: a26d0660356839b4783b9d747cf56bee
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_atk_0
+    21300002: enemy_atk_1
+    21300004: enemy_atk_2
+    21300006: enemy_atk_3
+    21300008: enemy_atk_4
+    21300010: enemy_atk_5
+    21300012: enemy_atk_6
+    21300014: enemy_atk_7
+    21300016: enemy_atk_8
+    21300018: enemy_atk_9
+    21300020: enemy_atk_10
+    21300022: enemy_atk_11
+    21300024: enemy_atk_12
+    21300026: enemy_atk_13
+    21300028: enemy_atk_14
+    21300030: enemy_atk_15
+    21300032: enemy_atk_16
+    21300034: enemy_atk_17
+    21300036: enemy_atk_18
+    21300038: enemy_atk_19
+    21300040: enemy_atk_20
+    21300042: enemy_atk_21
+    21300044: enemy_atk_22
+    21300046: enemy_atk_23
+    21300048: enemy_atk_24
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

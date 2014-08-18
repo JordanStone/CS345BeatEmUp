@@ -46,7 +46,7 @@ public class CharController : MonoBehaviour{
 	}
 
 	void Update(){
-		Debug.Log("comboTimer = " + cTimer);
+		//Debug.Log("comboTimer = " + cTimer);
 		if(punch > 0)
 		{
 			comboTimerUpdate();

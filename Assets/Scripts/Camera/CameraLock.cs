@@ -32,6 +32,7 @@ public class CameraLock : MonoBehaviour {
 		mCamera.transform.GetComponent<CameraBehavior>().lockActive = true;
 		for(int i=1; i <= numEnemies; i++)
 		{
+			Debug.Log("looping");
 			float xDistance = enemyOffset;
 			if (i%2 == 0)
 			{

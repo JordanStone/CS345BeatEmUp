@@ -1,6 +1,53 @@
 fileFormatVersion: 2
 guid: 8de361e4a97a20f4b969c3e91d900eb5
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: walk_0
+    21300002: walk_1
+    21300004: walk_2
+    21300006: walk_3
+    21300008: walk_4
+    21300010: walk_5
+    21300012: walk_6
+    21300014: walk_7
+    21300016: walk_8
+    21300018: walk_9
+    21300020: walk_10
+    21300022: walk_11
+    21300024: walk_12
+    21300026: walk_13
+    21300028: walk_14
+    21300030: walk_15
+    21300032: walk_16
+    21300034: walk_17
+    21300036: walk_18
+    21300038: walk_19
+    21300040: walk_20
+    21300042: walk_21
+    21300044: walk_22
+    21300046: walk_23
+    21300048: walk_24
+    21300050: walk_25
+    21300052: walk_26
+    21300054: walk_27
+    21300056: walk_28
+    21300058: walk_29
+    21300060: walk_30
+    21300062: walk_31
+    21300064: walk_32
+    21300066: walk_33
+    21300068: walk_34
+    21300070: walk_35
+    21300072: walk_36
+    21300074: walk_37
+    21300076: walk_38
+    21300078: walk_39
+    21300080: walk_40
+    21300082: walk_41
+    21300084: walk_42
+    21300086: walk_43
+    21300088: walk_44
+    21300090: walk_45
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

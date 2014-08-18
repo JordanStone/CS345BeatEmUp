@@ -1,6 +1,33 @@
 fileFormatVersion: 2
 guid: cb661c5847d942b40827e2574ba2678e
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: roll_0
+    21300002: roll_1
+    21300004: roll_2
+    21300006: roll_3
+    21300008: roll_4
+    21300010: roll_5
+    21300012: roll_6
+    21300014: roll_7
+    21300016: roll_8
+    21300018: roll_9
+    21300020: roll_10
+    21300022: roll_11
+    21300024: roll_12
+    21300026: roll_13
+    21300028: roll_14
+    21300030: roll_15
+    21300032: roll_16
+    21300034: roll_17
+    21300036: roll_18
+    21300038: roll_19
+    21300040: roll_20
+    21300042: roll_21
+    21300044: roll_22
+    21300046: roll_23
+    21300048: roll_24
+    21300050: roll_25
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

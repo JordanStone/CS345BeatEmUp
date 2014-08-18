@@ -1,6 +1,30 @@
 fileFormatVersion: 2
 guid: 793b359001acd2349b68a67f56a14d9b
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_run_0
+    21300002: enemy_run_1
+    21300004: enemy_run_2
+    21300006: enemy_run_3
+    21300008: enemy_run_4
+    21300010: enemy_run_5
+    21300012: enemy_run_6
+    21300014: enemy_run_7
+    21300016: enemy_run_8
+    21300018: enemy_run_9
+    21300020: enemy_run_10
+    21300022: enemy_run_11
+    21300024: enemy_run_12
+    21300026: enemy_run_13
+    21300028: enemy_run_14
+    21300030: enemy_run_15
+    21300032: enemy_run_16
+    21300034: enemy_run_17
+    21300036: enemy_run_18
+    21300038: enemy_run_19
+    21300040: enemy_run_20
+    21300042: enemy_run_21
+    21300044: enemy_run_22
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

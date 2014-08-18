@@ -1,6 +1,31 @@
 fileFormatVersion: 2
 guid: 1b064188d8dfd5646bd7c77480523edf
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: attack2_0
+    21300002: attack2_1
+    21300004: attack2_2
+    21300006: attack2_3
+    21300008: attack2_4
+    21300010: attack2_5
+    21300012: attack2_6
+    21300014: attack2_7
+    21300016: attack2_8
+    21300018: attack2_9
+    21300020: attack2_10
+    21300022: attack2_11
+    21300024: attack2_12
+    21300026: attack2_13
+    21300028: attack2_14
+    21300030: attack2_15
+    21300032: attack2_16
+    21300034: attack2_17
+    21300036: attack2_18
+    21300038: attack2_19
+    21300040: attack2_20
+    21300042: attack2_21
+    21300044: attack2_22
+    21300046: attack2_23
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
