@@ -3,10 +3,11 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 	public int health = 1;
+	public bool isPlayer = false;
 
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -20,6 +21,7 @@ public class Health : MonoBehaviour {
 	}
 
 	public void Death(){
+		GlobalConditions.onDeath(isPlayer); //Runs any relevant onDeath scripts
 		Destroy(this.gameObject);
 	}
 
