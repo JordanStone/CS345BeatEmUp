@@ -6,7 +6,8 @@ using System.Collections;
  */
 
 public class EnemyController : MonoBehaviour{
-	
+
+	public AudioClip animsound1;
 	public float maxSpeed = 3; //Max speed value allowed
 //	public Animator anim; //Will be implemented once we have animations
 
@@ -135,7 +136,10 @@ public class EnemyController : MonoBehaviour{
 
 	void Attack()
 	{
-		anim.SetInteger("Attack", 1);
+		anim.SetInteger ("Attack", 1);
+		audio.PlayOneShot (animsound1);
+
+
 		this.gameObject.tag = "EnemyAttack";
 		StartCoroutine(attackCooldown(waitTime));
 

@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 public class CameraLock : MonoBehaviour {
+
+	public AudioClip enemyspawn;
 	public GameObject mCamera;
 	public int numEnemies = 2;
 	public float enemyOffset = 5;
@@ -48,6 +50,8 @@ public class CameraLock : MonoBehaviour {
 
 	void spawnEnemy(float distance){
 		GameObject newEnemy = (GameObject) Instantiate (Resources.Load ("placeholderEnemy 1"));
+		audio.PlayOneShot (enemyspawn);
+
 		newEnemy.layer = 10;
 		newEnemy.transform.position = new Vector2(transform.position.x + distance, transform.position.y);
 	}

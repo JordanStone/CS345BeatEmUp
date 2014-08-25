@@ -7,6 +7,8 @@ using System.Collections;
 
 public class CharController : MonoBehaviour{
 
+	public AudioClip animsound1, animsound2, animsound3, animsound4;
+
 	public float maxSpeed = 5; //Max speed value allowed
 	public int damage = 10;
 	public Animator anim; //Will be implemented once we have animations
@@ -139,7 +141,7 @@ public class CharController : MonoBehaviour{
 		//Jump Animation
 		if(jump){
 			anim.SetTrigger("jump");
-
+			audio.PlayOneShot (animsound4);
 			jump = false;
 		}
 
@@ -156,14 +158,17 @@ public class CharController : MonoBehaviour{
 				case 1:
 				 //anim.SetInteger("punch", 1);
 				 StartCoroutine(attackCooldown(attackWait, punch));
+				 //audio.PlayOneShot (animsound1);
 					//trigger for regular punch animation
 					break;
 				case 2:
 					StartCoroutine(attackCooldown(attackWait, punch));
+					//audio.PlayOneShot (animsound2);
 					//trigger for second punch animation
 					break;
 				case 3:
 					StartCoroutine(attackCooldown(attackWait, punch));
+					//audio.PlayOneShot (animsound3);
 					//trigger for third punch animation
 					//punch = 0;
 					break;
@@ -206,9 +211,14 @@ public class CharController : MonoBehaviour{
 	{
 		punch = i;
 		anim.SetInteger("punch", punch);
-		if(i == 0)
-		{
+		if (i == 0) {
 			this.gameObject.tag = "Player";
+		} else if (i == 1) {
+			audio.PlayOneShot (animsound1);
+		} else if (i == 2) {
+			audio.PlayOneShot (animsound2);
+		} else if (i == 3) {
+			audio.PlayOneShot (animsound3);
 		}
 	}
 
