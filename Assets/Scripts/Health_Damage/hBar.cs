@@ -9,7 +9,7 @@ public class hBar : MonoBehaviour {
 	public Texture2D bgImage; 
 	public Texture2D fgImage; 
 
-	public float healthBarLength;
+	float healthBarLength;
 	
 	// Use this for initialization
 	void Start () {  
@@ -28,14 +28,14 @@ public class hBar : MonoBehaviour {
 		GUI.BeginGroup (new Rect (0,0, healthBarLength,32));
 		
 		// Draw the background image
-		GUI.Box (new Rect (0,0, healthBarLength,32), bgImage);
+		GUI.DrawTexture (new Rect (0,0, healthBarLength,32), bgImage);
 		
 		// Create a second Group which will be clipped
 		// We want to clip the image and not scale it, which is why we need the second Group
 		GUI.BeginGroup (new Rect (0,0, curHealth / maxHealth * healthBarLength, 32));
 		
 		// Draw the foreground image
-		GUI.Box (new Rect (0,0,healthBarLength,32), fgImage);
+		GUI.DrawTexture (new Rect (0,0,healthBarLength,32), fgImage);
 		
 		// End both Groups
 		GUI.EndGroup ();
