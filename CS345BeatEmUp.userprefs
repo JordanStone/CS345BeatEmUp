@@ -1,9 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharacterController\CharController.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Pmove.cs">
     <Files>
-      <File FileName="Assets\Scripts\CharacterController\CharController.cs" Line="150" Column="1" />
-      <File FileName="Assets\Scripts\SpawnerScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Pmove.cs" Line="23" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
