@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 9e9412600bae34c42aea4735b8d7c94e
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: tutorial_buttonNew
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

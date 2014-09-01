@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: 49afda13aa5777149886c4bbf6ac38cf
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Title_screen_no_buttons
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

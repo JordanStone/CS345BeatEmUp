@@ -3,6 +3,7 @@ using System.Collections;
 
 public class collisions : MonoBehaviour {
 	protected int damageTaken;
+	protected bool right;
 
 	// Use this for initialization
 	void Start () {
@@ -19,7 +20,8 @@ public class collisions : MonoBehaviour {
 		if(col.transform.gameObject.tag == "EnemyAttack")
 		{
 			damageTaken = col.transform.gameObject.GetComponent<EnemyController>().getDamage();
-			gameObject.transform.GetComponent<Health>().Damage(damageTaken);
+			right = col.transform.gameObject.GetComponent<EnemyController>().getFace();
+			gameObject.transform.GetComponent<Health>().Damage(right, damageTaken);
 		}
 		
 	}

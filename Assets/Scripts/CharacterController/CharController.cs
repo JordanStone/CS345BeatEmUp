@@ -10,10 +10,11 @@ public class CharController : MonoBehaviour{
 	public AudioClip animsound1, animsound2, animsound3, animsound4;
 
 	public float maxSpeed = 5; //Max speed value allowed
-	public int damage = 10;
+	public int defaultDamage = 10;
+	protected int damage = 10;
 	public Animator anim; //Will be implemented once we have animations
 	
-	bool right = true; //What Direction Is Player Facing
+	public bool right = true; //What Direction Is Player Facing
 
 	public Transform groundCheck; //Transform to Check for Ground
 	public LayerMask groundType; //Define What Is Ground
@@ -33,6 +34,7 @@ public class CharController : MonoBehaviour{
 	protected float cTimer = 0f;
 	public float cEnd = 1.0f;
 	public float timerSpeed = 0.2f;
+	public GameObject hitbox;
 
 	int punch = 0; //Is player punching. Int used to allow easy checking of punch states (combos, etc)
 	//0 = Idle/Not Punching
@@ -45,6 +47,7 @@ public class CharController : MonoBehaviour{
 
 	void Start(){
 		anim = gameObject.GetComponent<Animator>(); //Will be implemented once we have animations
+		hitbox = GameObject.Find("PlayerHit");
 	}
 
 	void Update(){
@@ -85,7 +88,7 @@ public class CharController : MonoBehaviour{
 				case 0: //First time pressed
 					if(grounded){ //Ground Contextual Attack Types
 						//punch = 1;
-						damage = 10;
+						damage = defaultDamage;
 						initiatePunch(1);
 						comboTimerReset();
 						//anim.SetInteger("punch", punch);
@@ -99,7 +102,7 @@ public class CharController : MonoBehaviour{
 
 				case 1: //Second time pressed
 					//punch = 2;
-					damage = 15;
+					damage = damage + damage/2;
 					initiatePunch(2);
 					comboTimerReset();
 					//Apply Attack Damage Here. Probably using a method for this.
@@ -107,7 +110,7 @@ public class CharController : MonoBehaviour{
 
 				case 2: //Third Time Pressed
 					//punch = 3;
-					damage = 30;
+					damage = damage * 2;
 					initiatePunch(3);
 					comboTimerReset();
 					//Apply Attack Damage Here. Probably using a method for this.
@@ -148,6 +151,7 @@ public class CharController : MonoBehaviour{
 		//Roll Animation
 		if(roll){
 			anim.SetTrigger("roll");
+			StartCoroutine(rollInvince());
 
 			roll = false;
 		}
@@ -229,6 +233,20 @@ public class CharController : MonoBehaviour{
 			initiatePunch(0);
 		}
 
+	}
+
+	IEnumerator rollInvince()
+	{
+		hitbox.layer = 14;
+		this.gameObject.layer = 14;
+		yield return new WaitForSeconds(0.48f);
+		hitbox.layer = 8;
+		this.gameObject.layer = 8;
+	}
+
+	public bool getFace()
+	{
+		return right;
 	}
 
 	void comboTimerUpdate()

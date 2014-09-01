@@ -12,6 +12,7 @@ public class CameraBehavior : MonoBehaviour {
 	public bool lockSet = false;
 	protected float xLockMin;
 	protected float xLockMax;
+	protected float yLock;
 	public float cameraOffset = 9.0f;
 	protected Vector3 tempOffset;
 	protected Vector3 tempDest;
@@ -19,6 +20,7 @@ public class CameraBehavior : MonoBehaviour {
 	public float lockDistance = 5f;
 	protected GameObject wallLeft;
 	protected GameObject wallRight;
+	protected GameObject enemyReset;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +30,12 @@ public class CameraBehavior : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if(!lockActive){
-			if(wallLeft != null && wallRight != null)
+			if(wallLeft != null && wallRight != null && enemyReset != null)
 			{
 				Destroy(wallLeft);
 				Destroy(wallRight);
+				Destroy(enemyReset);
+
 			}
 			if(transform.position.z < startDest.z)
 			{
@@ -51,10 +55,13 @@ public class CameraBehavior : MonoBehaviour {
 			tempDest = transform.position - tempOffset;
 			xLockMin = camera.transform.position.x - cameraOffset;
 			xLockMax = camera.transform.position.x + cameraOffset;
+			yLock = camera.transform.position.y - cameraOffset;
 			wallLeft = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
 			wallRight = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
+			enemyReset = (GameObject) Instantiate (Resources.Load ("EnemyResetBox"));
 			wallLeft.transform.position = new Vector2(xLockMin, 0);
 			wallRight.transform.position = new Vector2(xLockMax, 0);
+			enemyReset.transform.position = new Vector2(0, yLock);
 			lockSet = true;
 		}
 
