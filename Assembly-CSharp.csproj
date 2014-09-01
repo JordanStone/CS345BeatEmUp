@@ -54,6 +54,8 @@
      <Compile Include="Assets\Scripts\CharacterController\collisions.cs" />
      <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\EnemyScripts\Colliding.cs" />
+     <Compile Include="Assets\Scripts\EnemyScripts\Origin.cs" />
+     <Compile Include="Assets\Scripts\EnemyScripts\spawnPickup.cs" />
      <Compile Include="Assets\Scripts\GlobalConditions.cs" />
      <Compile Include="Assets\Scripts\Health_Damage\Health.cs" />
      <Compile Include="Assets\Scripts\Health_Damage\hBar.cs" />
@@ -64,6 +66,9 @@
      <Compile Include="Assets\Scripts\SpawnerScript.cs" />
      <Compile Include="Assets\Scripts\WallScripts\ResetEnemyWall.cs" />
      <Compile Include="Assets\Scripts\WallScripts\Wallbehavior.cs" />
+     <Compile Include="Assets\Scripts\WallScripts\checkpointScript.cs" />
+     <Compile Include="Assets\Scripts\collectibles\Float.cs" />
+     <Compile Include="Assets\Scripts\collectibles\healthPickUp.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Animations\Character\README_animation_frame_location.txt" />
      <None Include="Assets\Animations\Enemies\EnemyOne\README_ENEMY_animation_frame_location.txt" />

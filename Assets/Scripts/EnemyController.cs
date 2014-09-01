@@ -36,8 +36,10 @@ public class EnemyController : MonoBehaviour{
 	public float waitTime = 1.6f;
 	bool walk = false;
 	bool attacking = false;
+	bool startWait = true;
+	public float waitingStart = 0f;
 	
-	bool attack = false;
+	//bool attack = false;
 
 	
 	void Start(){
@@ -50,39 +52,16 @@ public class EnemyController : MonoBehaviour{
 	
 	void Update(){
 
+		if(startWait)
+		{
+			this.transform.position = spawnPosition;
+			StartCoroutine(setWait());
+
+
+
+		}
+
 		actualDistance = target.position.x - enemyTransform.position.x;
-		//Debug.Log("actualDistance" + actualDistance);
-		/*
-		if(actualDistance <= attackDistance && !attacking)
-		{
-			walk = false;
-			randomChoice = Random.Range(1, 2);
-
-
-			if(randomChoice >= 1)
-			{
-				//Debug.Log("ATTACK!");
-				Attack();
-
-			}
-			else
-			{
-				//Debug.Log("Move!");
-				MoveBack();
-			}
-
-		}
-		else if (actualDistance > attackDistance && !attacking ){
-			walk = true;
-			anim.SetTrigger("walking");
-				if(target.position.x > enemyTransform.position.x)
-		{
-		enemyTransform.position += enemyTransform.right * speed * Time.deltaTime;
-		}
-		else{
-			enemyTransform.position -= enemyTransform.right * speed * Time.deltaTime;
-		}
-		*/
 
 		}
 		
@@ -108,7 +87,7 @@ public class EnemyController : MonoBehaviour{
 		{
 			walk = false;
 			randomChoice = getRandom(3);
-			Debug.Log("random choice =" + randomChoice);
+			//Debug.Log("random choice =" + randomChoice);
 
 			if(randomChoice < 2)
 			{
@@ -135,61 +114,6 @@ public class EnemyController : MonoBehaviour{
 			Flip();
 		}
 
-		/*if(targetHeading.x <= attackDistance && !attacking)
-			{
-			walk = false;
-			randomChoice = Random.Range(1, 2);
-
-
-			if(randomChoice >= 1)
-			{
-				//Debug.Log("ATTACK!");
-				Attack();
-
-			}
-			else
-			{
-				//Debug.Log("Move!");
-				MoveBack();
-			}
-
-		}
-		//else if (actualDistance > attackDistance && !attacking ){
-			walk = true;
-			anim.SetTrigger("walking");
-				if(target.position.x > enemyTransform.position.x)
-		{
-		enemyTransform.position += enemyTransform.right * speed * Time.deltaTime;
-		}
-		else{
-			enemyTransform.position -= enemyTransform.right * speed * Time.deltaTime;
-		}
-		*/
-		
-//		anim.SetBool("ground",grounded); //Let the Animator Know
-//		anim.SetFloat("vSpeed",rigidbody2D.velocity.y); //How fast are we going vertically
-		
-		//float move = Input.GetAxis ("Horizontal"); //Get horizontal input
-		
-//		anim.SetFloat("xSpeed",Mathf.Abs(move)); //How fast are we going horizontally
-		//if(targetHeading.x > distanceAttack.x && !attacking){
-
-		//}
-		//Update this to move towards player
-		
-		//Orientation
-
-		/*
-
-		if (attack) {
-//			anim.SetTrigger ("attack");
-
-			attack = false;
-		}
-		*/
-
-		
-	//}
 }
 	
 	/*
@@ -239,6 +163,13 @@ public class EnemyController : MonoBehaviour{
 
 	}
 
+	IEnumerator setWait()
+	{
+
+		yield return new WaitForSeconds(2f);
+		startWait = false;
+	}
+
 	int getRandom(int max)
 	{
 		return Random.Range(1, max);
@@ -262,6 +193,12 @@ public class EnemyController : MonoBehaviour{
 	public Quaternion getSpawnRot()
 	{
 		return spawnRotation;
+	}
+	public void setWaitTime(float time)
+	{
+
+		waitingStart = time;
+		startWait = true;
 	}
 	
 }

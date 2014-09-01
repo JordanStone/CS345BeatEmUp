@@ -8,6 +8,7 @@ public class CameraLock : MonoBehaviour {
 	public float enemyOffset = 5;
 	protected GameObject enemies;
 	protected bool active = false;
+	public int totalEnemies = 0;
 	//protected GameObject LockandRoll;
 	// Use this for initialization
 
@@ -19,7 +20,7 @@ public class CameraLock : MonoBehaviour {
 
 		if(active)
 		{
-			if(enemies == null)
+			if(totalEnemies <= 0)
 			{
 				Debug.Log("Enemies null!");
 				mCamera.transform.GetComponent<CameraBehavior>().lockActive = false;
@@ -30,9 +31,9 @@ public class CameraLock : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D crash){
-		
+		int i=0;
 		mCamera.transform.GetComponent<CameraBehavior>().lockActive = true;
-		for(int i=1; i <= numEnemies; i++)
+		for(i=1; i <= numEnemies; i++)
 		{
 			//Debug.Log("looping");
 			float xDistance = enemyOffset;
@@ -40,7 +41,10 @@ public class CameraLock : MonoBehaviour {
 			{
 				xDistance = -xDistance;
 			}
+
 			spawnEnemy(xDistance);
+			totalEnemies++;
+			//spawnTime(xDistance);
 		}
 		enemies = GameObject.FindWithTag("Enemy");
 		//Destroy(this.gameObject);
@@ -49,10 +53,27 @@ public class CameraLock : MonoBehaviour {
 	}
 
 	void spawnEnemy(float distance){
+		//float newFloat = (float) num * (0.5f);
+
 		GameObject newEnemy = (GameObject) Instantiate (Resources.Load ("placeholderEnemy 1"));
 		audio.PlayOneShot (enemyspawn);
 
 		newEnemy.layer = 10;
 		newEnemy.transform.position = new Vector2(transform.position.x + distance, transform.position.y);
+		newEnemy.GetComponent<Origin>().setOrigin(this.gameObject);
+		//newEnemy.GetComponent<EnemyController>().setWaitTime(newFloat);
 	}
+
+	public void decrementEnemyCounter()
+	{
+		totalEnemies -= 1;
+	}
+
+	IEnumerator spawnTime(float d)
+	{
+		yield return new WaitForSeconds(0.5f);
+		spawnEnemy(d);
+	}
+
+
 }

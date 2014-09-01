@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Health : MonoBehaviour {
 	public int health = 1;
+	protected int maxHealth = 100;
 	public float colorTime = 0.2f;
 	public float forceCoefficient = 500f;
 	public bool isPlayer = false;
 	protected Color defaultColor = Color.white;
 	protected Color damageColor = new Color(0.8f, 0.0f, 0.0f, 1.0f);
+	protected Color plusColor = new Color(0.0f, 0.9f, 0.0f, 1.0f);
 	//protected bool colorCool = false;
 
 	// Use this for initialization
@@ -27,6 +29,14 @@ public class Health : MonoBehaviour {
 
 	public void Death(){
 		GlobalConditions.onDeath(isPlayer); //Runs any relevant onDeath scripts
+		if(!isPlayer)
+		{
+			int choice = getRandom();
+			GameObject origin = this.gameObject.GetComponent<Origin>().getOrigin();
+			origin.GetComponent<CameraLock>().decrementEnemyCounter();
+			parseRandom(choice);
+
+		}
 		Destroy(this.gameObject);
 	}
 
@@ -43,6 +53,12 @@ public class Health : MonoBehaviour {
 	public void addHealth(int h)
 	{
 		this.health += h;
+		if(this.health > this.maxHealth)
+		{
+			this.health = this.maxHealth;
+		}
+		StartCoroutine(plusHealth());
+
 	}
 	
 	public void noForceDamage(int d)
@@ -76,5 +92,25 @@ public class Health : MonoBehaviour {
 		this.gameObject.transform.GetComponent<SpriteRenderer>().color = defaultColor;
 	}
 
+	IEnumerator plusHealth()
+	{
+		this.gameObject.transform.GetComponent<SpriteRenderer>().color = plusColor;
+		yield return new WaitForSeconds(colorTime);
+		this.gameObject.transform.GetComponent<SpriteRenderer>().color = defaultColor;
+	}
+
+	int getRandom()
+	{
+		return Random.Range(0, 10);
+	}
+
+	void parseRandom(int r)
+	{
+		if(r >= 8)
+		{
+			Debug.Log("r =" + r);
+			this.gameObject.GetComponent<spawnPickup>().spawnPickups();
+		}
+	}
 
 }

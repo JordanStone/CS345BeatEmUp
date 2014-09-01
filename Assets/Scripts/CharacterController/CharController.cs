@@ -27,6 +27,7 @@ public class CharController : MonoBehaviour{
 	bool roll = false; //Is player rolling
 	public float rollForce = 50f; //Roll force given
 
+
 	bool attackCool = false;
 	bool comboCool = false;
 	public float attackWait = 0.5f;
@@ -35,6 +36,8 @@ public class CharController : MonoBehaviour{
 	public float cEnd = 1.0f;
 	public float timerSpeed = 0.2f;
 	public GameObject hitbox;
+	public Vector3 spawnPos;
+	public Quaternion spawnRot;
 
 	int punch = 0; //Is player punching. Int used to allow easy checking of punch states (combos, etc)
 	//0 = Idle/Not Punching
@@ -48,6 +51,8 @@ public class CharController : MonoBehaviour{
 	void Start(){
 		anim = gameObject.GetComponent<Animator>(); //Will be implemented once we have animations
 		hitbox = GameObject.Find("PlayerHit");
+		spawnPos = this.transform.position;
+		spawnRot = this.transform.rotation;
 	}
 
 	void Update(){
@@ -249,6 +254,16 @@ public class CharController : MonoBehaviour{
 		return right;
 	}
 
+	public Vector3 getSpawnPos()
+	{
+		return spawnPos;
+	}
+
+	public Quaternion getSpawnRot()
+	{
+		return spawnRot;
+	}
+
 	void comboTimerUpdate()
 	{
 		cTimer += timerSpeed * Time.deltaTime;
@@ -258,5 +273,6 @@ public class CharController : MonoBehaviour{
 	{
 		cTimer = 0f;
 	}
+
 
 }
