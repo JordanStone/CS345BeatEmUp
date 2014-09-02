@@ -25,12 +25,14 @@ public class CharController : MonoBehaviour{
 	public float jumpForce = 300f; //Max amount of jump force given
 
 	bool roll = false; //Is player rolling
+	bool rolling = false;
 	public float rollForce = 50f; //Roll force given
 
 
 	bool attackCool = false;
 	bool comboCool = false;
 	public float attackWait = 0.5f;
+	protected float punchWait;
 	public float comboTime = 1.0f;
 	protected float cTimer = 0f;
 	public float cEnd = 1.0f;
@@ -38,6 +40,10 @@ public class CharController : MonoBehaviour{
 	public GameObject hitbox;
 	public Vector3 spawnPos;
 	public Quaternion spawnRot;
+	protected bool punchCool=false;
+	protected bool tired = false;
+	protected bool firstPunch = true;
+	public float rollD = 5f;
 
 	int punch = 0; //Is player punching. Int used to allow easy checking of punch states (combos, etc)
 	//0 = Idle/Not Punching
@@ -53,10 +59,12 @@ public class CharController : MonoBehaviour{
 		hitbox = GameObject.Find("PlayerHit");
 		spawnPos = this.transform.position;
 		spawnRot = this.transform.rotation;
+		punchWait = attackWait * 0.9f;
 	}
 
 	void Update(){
 		//Debug.Log("comboTimer = " + cTimer);
+		//punchWait = attackWait * 0.03f;
 		if(punch > 0)
 		{
 			comboTimerUpdate();
@@ -71,14 +79,27 @@ public class CharController : MonoBehaviour{
 
 		if(Input.GetButtonDown("Fire1") && grounded){ //Roll
 			initiatePunch(0);
-			if (right){
+			/*if (right){
 				rigidbody2D.AddForce(new Vector2(rollForce, 0f));
 				rigidbody2D.velocity = new Vector2(-rollForce * maxSpeed,rigidbody2D.velocity.y + 1);
 			}else{
 				rigidbody2D.AddForce(new Vector2(-rollForce, 0f));
 				rigidbody2D.velocity = new Vector2(rollForce * maxSpeed,rigidbody2D.velocity.y + 1);
-			}
+			}*/
 			roll = true;
+		}
+
+		if(rolling)
+		{
+			if(right)
+			{
+				this.transform.position += new Vector3(rollD * Time.deltaTime, 0f, 0f);
+			}
+			else
+			{
+				this.transform.position -= new Vector3(rollD * Time.deltaTime, 0f, 0f);
+			}
+			
 		}
 
 		if(Input.GetButtonDown("Fire2") && !roll){//Punch
@@ -86,6 +107,14 @@ public class CharController : MonoBehaviour{
 			//comboTimerUpdate();
 
 			//StartCoroutine(comboEnder());
+			/*if(firstPunch)
+			{
+				punch = punch;
+				firstPunch = false;
+			}*/
+
+			if(!attackCool)
+			{
 			punch = punch;
 			this.gameObject.tag = "PlayerAttack";
 
@@ -121,6 +150,11 @@ public class CharController : MonoBehaviour{
 					//Apply Attack Damage Here. Probably using a method for this.
 					break;
 			}
+		}
+		else if(attackCool)
+		{
+			punch++;
+		}
 			
 
 			
@@ -132,10 +166,22 @@ public class CharController : MonoBehaviour{
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundType); //Are we on ground
 		anim.SetBool("ground",grounded); //Let the Animator Know
 		anim.SetFloat("vSpeed",rigidbody2D.velocity.y); //How fast are we going vertically
+		float move;
 		
-		float move = Input.GetAxis ("Horizontal"); //Get horizontal input
+		if(!attackCool && !rolling)
+		{
+			move = Input.GetAxis ("Horizontal"); //Get horizontal input
+
+		}
+		else
+		{
+			move = 0f;
+
+		}
+		
 
 		anim.SetFloat("xSpeed",Mathf.Abs(move)); //How fast are we going horizontally
+
 
 		rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y); //Take input and move object
 
@@ -156,27 +202,30 @@ public class CharController : MonoBehaviour{
 		//Roll Animation
 		if(roll){
 			anim.SetTrigger("roll");
+			StartCoroutine(rollTime());
 			StartCoroutine(rollInvince());
-
 			roll = false;
 		}
 
 		//Punch Animation
-		if(punch > 0){ //We have punch
+		if(punch > 0 && !attackCool){ //We have punch
 			switch(punch){
 				case 1:
 				 //anim.SetInteger("punch", 1);
 				 StartCoroutine(attackCooldown(attackWait, punch));
+				 //StartCoroutine(punchCooldown(punchWait));
 				 //audio.PlayOneShot (animsound1);
 					//trigger for regular punch animation
 					break;
 				case 2:
 					StartCoroutine(attackCooldown(attackWait, punch));
+					//StartCoroutine(punchCooldown(punchWait));
 					//audio.PlayOneShot (animsound2);
 					//trigger for second punch animation
 					break;
 				case 3:
 					StartCoroutine(attackCooldown(attackWait, punch));
+					//StartCoroutine(punchCooldown(punchWait));
 					//audio.PlayOneShot (animsound3);
 					//trigger for third punch animation
 					//punch = 0;
@@ -208,12 +257,38 @@ public class CharController : MonoBehaviour{
 	IEnumerator attackCooldown(float waitTime, int p)
 	{
 		attackCool = true;
+		//punchCool = true;
 		yield return new WaitForSeconds(waitTime);
-		if(punch == p)
+		//punchCool = false;
+		//yield return new WaitForSeconds(waitTime * 0.5f);
+		if(punch == p && attackCool)
 		{
 			initiatePunch(0);
+			attackCool = false;
+		}
+		else if(p < punch && p < 3 && attackCool)
+		{
+			//attackCool = false;
+			initiatePunch(p + 1);
+			comboTimerReset();
+			StartCoroutine(attackCooldown(waitTime, p + 1));
+		}
+		else
+		{
+			initiatePunch(0);
+			attackCool = false;
 		}
 		attackCool = false;
+
+	}
+
+
+	IEnumerator punchCooldown(float coolTime)
+	{
+		punchCool = true;
+		yield return new WaitForSeconds(coolTime);
+		punchCool = false;
+
 	}
 
 	void initiatePunch(int i)
@@ -222,11 +297,15 @@ public class CharController : MonoBehaviour{
 		anim.SetInteger("punch", punch);
 		if (i == 0) {
 			this.gameObject.tag = "Player";
+			damage = defaultDamage;
+			StartCoroutine(staminaCool());
 		} else if (i == 1) {
 			audio.PlayOneShot (animsound1);
 		} else if (i == 2) {
+			damage = defaultDamage + damage/2;
 			audio.PlayOneShot (animsound2);
 		} else if (i == 3) {
+			damage = defaultDamage * 2;
 			audio.PlayOneShot (animsound3);
 		}
 	}
@@ -240,11 +319,18 @@ public class CharController : MonoBehaviour{
 
 	}
 
+	IEnumerator rollTime()
+	{
+		rolling = true;
+		yield return new WaitForSeconds(0.75f);
+		rolling = false;
+	}
+
 	IEnumerator rollInvince()
 	{
 		hitbox.layer = 14;
 		this.gameObject.layer = 14;
-		yield return new WaitForSeconds(0.48f);
+		yield return new WaitForSeconds(0.43f);
 		hitbox.layer = 8;
 		this.gameObject.layer = 8;
 	}
@@ -272,6 +358,13 @@ public class CharController : MonoBehaviour{
 	void comboTimerReset()
 	{
 		cTimer = 0f;
+	}
+
+	IEnumerator staminaCool()
+	{
+		tired = true;
+		yield return new WaitForSeconds(0.3f);
+		tired = false;
 	}
 
 

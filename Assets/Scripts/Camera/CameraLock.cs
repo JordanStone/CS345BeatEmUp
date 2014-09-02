@@ -24,6 +24,7 @@ public class CameraLock : MonoBehaviour {
 			{
 				Debug.Log("Enemies null!");
 				mCamera.transform.GetComponent<CameraBehavior>().lockActive = false;
+				mCamera.transform.GetComponent<CameraBehavior>().lockSet = false;
 				Destroy(this.gameObject);
 			}
 		}

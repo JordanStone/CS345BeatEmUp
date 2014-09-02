@@ -52,14 +52,6 @@ public class EnemyController : MonoBehaviour{
 	
 	void Update(){
 
-		if(startWait)
-		{
-			this.transform.position = spawnPosition;
-			StartCoroutine(setWait());
-
-
-
-		}
 
 		actualDistance = target.position.x - enemyTransform.position.x;
 
