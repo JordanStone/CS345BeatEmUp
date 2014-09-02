@@ -46,7 +46,13 @@ using System.Collections;
 				}
 
 				if (GUI.Button (new Rect((Screen.width/2) + 25f, (Screen.height/2) + 67f, Screen.width/4,Screen.height/4),menuButton, "")){
-					Application.LoadLevel("MainMenu");	
+					//Make sure you unpause first!
+					print("Unpaused!");
+					Time.timeScale = 1.0f;
+					isPaused = false;
+					AudioListener.pause = false;
+
+					Application.LoadLevel("MainMenu");
 				}
 			}
 		}
