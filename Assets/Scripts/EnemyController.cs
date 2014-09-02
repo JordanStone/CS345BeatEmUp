@@ -38,6 +38,8 @@ public class EnemyController : MonoBehaviour{
 	bool attacking = false;
 	bool startWait = true;
 	public float waitingStart = 0f;
+	protected bool dodge = false;
+	protected float dodgeD = 3.0f;
 	
 	//bool attack = false;
 
@@ -51,6 +53,19 @@ public class EnemyController : MonoBehaviour{
 	}
 	
 	void Update(){
+
+		if(dodge)
+		{
+			if(right)
+			{
+				this.transform.position -= new Vector3(dodgeD * Time.deltaTime, 0f, 0f);
+
+			}
+			else
+			{
+				this.transform.position += new Vector3(dodgeD * Time.deltaTime, 0f, 0f);
+			}
+		}
 
 
 		actualDistance = target.position.x - enemyTransform.position.x;
@@ -75,13 +90,13 @@ public class EnemyController : MonoBehaviour{
 		Vector2 targetDirection = targetHeading.normalized;
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundType); //Are we on ground
 
-		if(Mathf.Abs(targetHeading.x) <= Mathf.Abs(attackDistance) && !attacking)
+		if(Mathf.Abs(targetHeading.x) <= Mathf.Abs(attackDistance) && !attacking && !dodge)
 		{
 			walk = false;
-			randomChoice = getRandom(3);
+			randomChoice = getRandom(11);
 			//Debug.Log("random choice =" + randomChoice);
 
-			if(randomChoice < 2)
+			if(randomChoice < 9)
 			{
 				Attack();
 			}
@@ -90,7 +105,7 @@ public class EnemyController : MonoBehaviour{
 				MoveBack();
 			}
 		}
-		else if (!attacking)
+		else if (!attacking && !dodge)
 		{
 
 		rigidbody2D.velocity = new Vector2(speed * targetDirection.x, rigidbody2D.velocity.y); 
@@ -144,15 +159,27 @@ public class EnemyController : MonoBehaviour{
 
 	void MoveBack()
 	{
+
+
 		Vector2 targetHeading = target.position - transform.position;
 		Vector2 targetDirection = targetHeading.normalized;
 
+		StartCoroutine(dodgeWait());
+		/*
 		if (targetHeading.x >= 0 && !right){ //Player to the left
 			this.gameObject.rigidbody2D.AddForce(new Vector2(-dodgeForce, 0f));
 		}else if (targetHeading.x < 0 && right){ //Player to the right
 			this.gameObject.rigidbody2D.AddForce(new Vector2(dodgeForce, 0f));
 		}
+		*/
 
+	}
+
+	IEnumerator dodgeWait()
+	{
+		dodge = true;
+		yield return new WaitForSeconds(0.75f);
+		dodge = false;
 	}
 
 	IEnumerator setWait()
