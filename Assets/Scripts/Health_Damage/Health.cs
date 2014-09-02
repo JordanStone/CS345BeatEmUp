@@ -7,6 +7,7 @@ public class Health : MonoBehaviour {
 	public float colorTime = 0.2f;
 	public float forceCoefficient = 500f;
 	public bool isPlayer = false;
+	public bool isBoss = false;
 	protected Color defaultColor = Color.white;
 	protected Color damageColor = new Color(0.8f, 0.0f, 0.0f, 1.0f);
 	protected Color plusColor = new Color(0.0f, 0.9f, 0.0f, 1.0f);
@@ -29,13 +30,28 @@ public class Health : MonoBehaviour {
 
 	public void Death(){
 		GlobalConditions.onDeath(isPlayer); //Runs any relevant onDeath scripts
-		if(!isPlayer)
+		if(!isPlayer && !isBoss)
 		{
 			int choice = getRandom();
 			GameObject origin = this.gameObject.GetComponent<Origin>().getOrigin();
-			origin.GetComponent<CameraLock>().decrementEnemyCounter();
+			if(origin.GetComponent<CameraLock>() != null)
+			{
+				origin.GetComponent<CameraLock>().decrementEnemyCounter();
+			}
+			else
+			{
+				origin.GetComponent<Buff>().decrementEnemyCounter();
+			}
+			
 			parseRandom(choice);
 
+		}
+		if(isBoss)
+		{
+			GameObject origin = this.gameObject.GetComponent<Origin>().getOrigin();
+			origin.GetComponent<BossLock>().decrementEnemyCounter();
+			this.gameObject.GetComponent<Buff>().DestroyAnyMinions();
+			this.gameObject.GetComponent<spawnPickup>().spawnPickups("BossPickup");
 		}
 		Destroy(this.gameObject);
 	}
@@ -109,7 +125,7 @@ public class Health : MonoBehaviour {
 		if(r >= 8)
 		{
 			Debug.Log("r =" + r);
-			this.gameObject.GetComponent<spawnPickup>().spawnPickups();
+			this.gameObject.GetComponent<spawnPickup>().spawnPickups("HealthPickup");
 		}
 	}
 

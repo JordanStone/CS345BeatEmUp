@@ -13,9 +13,9 @@ public class spawnPickup : MonoBehaviour {
 	
 	}
 
-	public void spawnPickups()
+	public void spawnPickups(string pick)
 	{
-		GameObject newPickup = (GameObject) Instantiate (Resources.Load("HealthPickUp"));
+		GameObject newPickup = (GameObject) Instantiate (Resources.Load(pick));
 		newPickup.transform.position = this.transform.position;
 	}
 }

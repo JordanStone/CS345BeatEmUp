@@ -204,6 +204,11 @@ public class EnemyController : MonoBehaviour{
 		return damage;
 	}
 
+	public void setDamage(int d)
+	{
+		damage = d;
+	}
+
 	public Vector3 getSpawnPos()
 	{
 		return spawnPosition;
