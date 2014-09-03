@@ -129,4 +129,10 @@ public class Health : MonoBehaviour {
 		}
 	}
 
+	public void setDefaultColor(Color c)
+	{
+		defaultColor = c;
+
+	}
+
 }

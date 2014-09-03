@@ -6,6 +6,8 @@ public class BossLock : MonoBehaviour {
 	public GameObject mCamera;
 	protected bool active = false;
 	public int totalEnemies = 0;
+	//public AudioClip bossTheme;
+
 	//protected GameObject LockandRoll;
 	// Use this for initialization
 
@@ -22,6 +24,8 @@ public class BossLock : MonoBehaviour {
 				//Debug.Log("Enemies null!");
 				mCamera.transform.GetComponent<CameraBehavior>().lockActive = false;
 				mCamera.transform.GetComponent<CameraBehavior>().lockSet = false;
+				this.gameObject.GetComponent<AudioSource>().mute = true;
+				mCamera.GetComponent<AudioSource>().mute = false;
 				Destroy(this.gameObject);
 			}
 		}
@@ -31,6 +35,8 @@ public class BossLock : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D crash){
 		mCamera.transform.GetComponent<CameraBehavior>().lockActive = true;
 		spawnBoss();
+		mCamera.GetComponent<AudioSource>().mute = true;
+		this.gameObject.GetComponent<AudioSource>().mute = false;
 		totalEnemies++;
 		this.gameObject.layer = 12;
 		active = true;

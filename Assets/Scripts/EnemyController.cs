@@ -40,6 +40,9 @@ public class EnemyController : MonoBehaviour{
 	public float waitingStart = 0f;
 	protected bool dodge = false;
 	protected float dodgeD = 3.0f;
+	public GameObject myHitbox;
+	public float hitboxMove = .5f;
+	protected float hitboxSumMove = 0f;
 	
 	//bool attack = false;
 
@@ -50,9 +53,25 @@ public class EnemyController : MonoBehaviour{
 		target = GameObject.FindWithTag ("Player").transform;
 		spawnPosition = this.gameObject.transform.position;
 		spawnRotation = this.gameObject.transform.rotation;
+
 	}
 	
 	void Update(){
+
+		if(attacking)
+		{
+			if(right)
+			{
+				myHitbox.transform.position -= new Vector3(hitboxMove * Time.deltaTime, 0f, 0f);
+			}
+			else
+			{
+				myHitbox.transform.position += new Vector3(hitboxMove * Time.deltaTime, 0f, 0f);
+			}
+			hitboxSumMove += hitboxMove * Time.deltaTime;
+
+		}
+
 
 		if(dodge)
 		{
@@ -155,6 +174,15 @@ public class EnemyController : MonoBehaviour{
 		this.gameObject.tag = "Enemy";
 		attackCool = false;
 		attacking = false;
+		if(right)
+		{
+			myHitbox.transform.position += new Vector3(hitboxSumMove, 0f, 0f);
+		}
+		else
+		{
+			myHitbox.transform.position -= new Vector3(hitboxSumMove, 0f, 0f);
+		}
+		hitboxSumMove = 0f;
 	}
 
 	void MoveBack()

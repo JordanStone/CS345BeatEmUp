@@ -6,6 +6,7 @@ public class collisions : MonoBehaviour {
 	protected bool right;
 	protected Vector3 pos;
 	protected Quaternion rot;
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +24,15 @@ public class collisions : MonoBehaviour {
 		{
 			damageTaken = col.transform.gameObject.GetComponent<EnemyController>().getDamage();
 			right = col.transform.gameObject.GetComponent<EnemyController>().getFace();
-			gameObject.transform.GetComponent<Health>().Damage(right, damageTaken);
+			player.gameObject.transform.GetComponent<Health>().Damage(right, damageTaken);
 		}
 		if(col.transform.gameObject.tag == "ResetBox")
 		{
-			pos = this.gameObject.GetComponent<CharController>().getSpawnPos();
-			rot = this.gameObject.GetComponent<CharController>().getSpawnRot();
-			this.gameObject.transform.position = pos;
-			this.gameObject.transform.rotation = rot;
-			this.gameObject.GetComponent<Health>().noForceDamage(10);
+			pos = player.gameObject.GetComponent<CharController>().getSpawnPos();
+			rot = player.gameObject.GetComponent<CharController>().getSpawnRot();
+			player.gameObject.transform.position = pos;
+			player.gameObject.transform.rotation = rot;
+			player.gameObject.GetComponent<Health>().noForceDamage(10);
 
 		}
 		

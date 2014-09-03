@@ -16,6 +16,7 @@ public class Buff : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.gameObject.GetComponent<Health>().setDefaultColor(green);
 		this.gameObject.GetComponent<SpriteRenderer>().color = green;
 		spawnMinions();
 
@@ -26,6 +27,7 @@ public class Buff : MonoBehaviour {
 	void Update () {
 		if( totalEnemies <= 0 && !buffed)
 		{
+			this.gameObject.GetComponent<Health>().setDefaultColor(enraged);
 			getAngry();
 			buffed = true;
 		}

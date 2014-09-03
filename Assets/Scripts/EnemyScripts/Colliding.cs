@@ -6,6 +6,7 @@ public class Colliding : MonoBehaviour {
 	protected bool right;
 	protected Vector3 pos;
 	protected Quaternion rot;
+	public GameObject enemy;
 
 
 	// Use this for initialization
@@ -24,15 +25,15 @@ public class Colliding : MonoBehaviour {
 		{
 			damageTaken = col.transform.gameObject.GetComponent<CharController>().getDamage();
 			right = col.transform.gameObject.GetComponent<CharController>().getFace();
-			gameObject.transform.GetComponent<Health>().Damage(right, damageTaken);
+			enemy.gameObject.transform.GetComponent<Health>().Damage(right, damageTaken);
 		}
 		if(col.transform.gameObject.tag == "ResetBox")
 		{
-			pos = this.gameObject.GetComponent<EnemyController>().getSpawnPos();
-			rot = this.gameObject.GetComponent<EnemyController>().getSpawnRot();
-			this.gameObject.transform.position = pos;
-			this.gameObject.transform.rotation = rot;
-			this.gameObject.GetComponent<Health>().noForceDamage(10);
+			pos = enemy.gameObject.GetComponent<EnemyController>().getSpawnPos();
+			rot = enemy.gameObject.GetComponent<EnemyController>().getSpawnRot();
+			enemy.gameObject.transform.position = pos;
+			enemy.gameObject.transform.rotation = rot;
+			enemy.gameObject.GetComponent<Health>().noForceDamage(10);
 		}
 		
 	}
