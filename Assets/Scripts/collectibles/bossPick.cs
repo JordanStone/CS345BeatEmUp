@@ -15,6 +15,6 @@ public class bossPick : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D col)
 	{
-		//Go to victory screen
+		Application.LoadLevel("Victory");
 	}
 }
