@@ -43,7 +43,7 @@ public class BossLock : MonoBehaviour {
 		audio.PlayOneShot (enemyspawn);
 
 		newEnemy.layer = 10;
-		newEnemy.transform.position = new Vector2(transform.position.x - 4f, transform.position.y - 2f);
+		newEnemy.transform.position = new Vector2(transform.position.x - 4f, transform.position.y - 5f);
 		newEnemy.GetComponent<Origin>().setOrigin(this.gameObject);
 		//newEnemy.GetComponent<EnemyController>().setWaitTime(newFloat);
 	}

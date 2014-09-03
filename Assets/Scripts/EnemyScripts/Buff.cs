@@ -40,8 +40,8 @@ public class Buff : MonoBehaviour {
 		 leftMinion.layer = 10;
 		 rightMinion.layer = 10;
 
-		 leftMinion.transform.position = new Vector2(transform.position.x - 3f, transform.position.y);
-		 rightMinion.transform.position = new Vector2(transform.position.x + 3f, transform.position.y);
+		 leftMinion.transform.position = new Vector2(transform.position.x - 2f, transform.position.y);
+		 rightMinion.transform.position = new Vector2(transform.position.x + 2f, transform.position.y);
 		 totalEnemies++;
 		 totalEnemies++;
 		 leftMinion.GetComponent<Origin>().setOrigin(this.gameObject);
