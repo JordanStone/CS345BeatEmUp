@@ -1,6 +1,8 @@
 fileFormatVersion: 2
 guid: f19d2ee8f82732e4c814ecfaf6b4292c
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: playagain_button_gameOver
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
