@@ -57,6 +57,7 @@ public class EnemyController : MonoBehaviour{
 	}
 	
 	void Update(){
+		this.gameObject.transform.rotation = spawnRotation;
 
 		if(attacking)
 		{

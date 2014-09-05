@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\collectibles\Float.cs" />
      <Compile Include="Assets\Scripts\collectibles\bossPick.cs" />
      <Compile Include="Assets\Scripts\collectibles\healthPickUp.cs" />
+     <Compile Include="Assets\Scripts\collectibles\hitRanger.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Animations\Character\README_animation_frame_location.txt" />
      <None Include="Assets\Animations\Enemies\EnemyOne\README_ENEMY_animation_frame_location.txt" />

@@ -44,6 +44,7 @@ public class CharController : MonoBehaviour{
 	protected bool tired = false;
 	protected bool firstPunch = true;
 	public float rollD = 5f;
+	protected bool onlyOneExplozion = false;
 
 	int punch = 0; //Is player punching. Int used to allow easy checking of punch states (combos, etc)
 	//0 = Idle/Not Punching
@@ -259,6 +260,7 @@ public class CharController : MonoBehaviour{
 		attackCool = true;
 		//punchCool = true;
 		yield return new WaitForSeconds(waitTime);
+		onlyOneExplozion = false;
 		//punchCool = false;
 		//yield return new WaitForSeconds(waitTime * 0.5f);
 		if(punch == p && attackCool)
@@ -275,6 +277,7 @@ public class CharController : MonoBehaviour{
 		}
 		else
 		{
+
 			initiatePunch(0);
 			attackCool = false;
 		}
@@ -305,6 +308,12 @@ public class CharController : MonoBehaviour{
 			damage = defaultDamage + damage/2;
 			audio.PlayOneShot (animsound2);
 		} else if (i == 3) {
+			if(!tired)
+			{
+				GameObject rangeDamage = (GameObject) Instantiate (Resources.Load("HitExplozion"));
+				rangeDamage.transform.position = this.gameObject.transform.position;
+				StartCoroutine(staminaCool());
+			}
 			damage = defaultDamage * 2;
 			audio.PlayOneShot (animsound3);
 		}
@@ -363,7 +372,7 @@ public class CharController : MonoBehaviour{
 	IEnumerator staminaCool()
 	{
 		tired = true;
-		yield return new WaitForSeconds(0.3f);
+		yield return new WaitForSeconds(5f);
 		tired = false;
 	}
 
