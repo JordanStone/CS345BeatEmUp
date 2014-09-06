@@ -9,6 +9,8 @@ public class hBar : MonoBehaviour {
 	public Texture2D bgImage; 
 	public Texture2D fgImage; 
 
+	public Texture2D overlayImg;
+
 	float healthBarLength;
 	
 	// Use this for initialization
@@ -23,22 +25,16 @@ public class hBar : MonoBehaviour {
 	}
 	
 	void OnGUI () {
+
+		GUI.DrawTexture (new Rect (-35,3,(Screen.width / 2) + 50,50), overlayImg);
+
 		// Create one Group to contain both images
 		// Adjust the first 2 coordinates to place it somewhere else on-screen
-		GUI.BeginGroup (new Rect (0,0, healthBarLength,32));
+		GUI.BeginGroup (new Rect (0,5, healthBarLength,50));
 		
 		// Draw the background image
-		GUI.DrawTexture (new Rect (0,0, healthBarLength,32), bgImage);
+		GUI.DrawTexture (new Rect (0,5, healthBarLength,50), bgImage);
 		
-		// Create a second Group which will be clipped
-		// We want to clip the image and not scale it, which is why we need the second Group
-		GUI.BeginGroup (new Rect (0,0, curHealth / maxHealth * healthBarLength, 32));
-		
-		// Draw the foreground image
-		GUI.DrawTexture (new Rect (0,0,healthBarLength,32), fgImage);
-		
-		// End both Groups
-		GUI.EndGroup ();
 		
 		GUI.EndGroup ();
 	}
