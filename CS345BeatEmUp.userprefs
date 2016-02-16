@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Pmove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\gearshift\GearShift\Assets\Game\Scripts\Gear\GearFunctionality\Orientation.cs">
     <Files>
-      <File FileName="Assets\Scripts\Pmove.cs" Line="23" Column="12" />
+      <File FileName="..\gearshift\GearShift\Assets\Game\Scripts\Gear\GearFunctionality\Orientation.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

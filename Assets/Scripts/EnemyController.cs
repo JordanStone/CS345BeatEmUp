@@ -128,7 +128,7 @@ public class EnemyController : MonoBehaviour{
 		else if (!attacking && !dodge)
 		{
 
-		rigidbody2D.velocity = new Vector2(speed * targetDirection.x, rigidbody2D.velocity.y); 
+		GetComponent<Rigidbody2D>().velocity = new Vector2(speed * targetDirection.x, GetComponent<Rigidbody2D>().velocity.y); 
 		anim.SetTrigger("walking");
 
 		}
@@ -157,7 +157,7 @@ public class EnemyController : MonoBehaviour{
 	{
 		anim.SetInteger ("Attack", 1);
 		//this.gameObject.rigidbody2D.AddForce(new Vector2(0f, 500f));
-		audio.PlayOneShot (animsound1);
+		GetComponent<AudioSource>().PlayOneShot (animsound1);
 
 
 		this.gameObject.tag = "EnemyAttack";

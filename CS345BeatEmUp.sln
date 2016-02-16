@@ -5,8 +5,6 @@ Project("{6A05DC9C-BD19-3403-275C-DC1202B78E78}") = "CS345BeatEmUp", "Assembly-C
 EndProject
 Project("{6A05DC9C-BD19-3403-275C-DC1202B78E78}") = "CS345BeatEmUp", "Assembly-CSharp.csproj", "{A7F7E56C-BA51-523D-2C90-9DB96941ECD1}"
 EndProject
-Project("{6A05DC9C-BD19-3403-275C-DC1202B78E78}") = "CS345BeatEmUp", "Assembly-UnityScript-firstpass.unityproj", "{CD7C4120-3E5B-CAAE-C55E-42BEF869F048}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,15 +19,11 @@ Global
 		{A7F7E56C-BA51-523D-2C90-9DB96941ECD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7F7E56C-BA51-523D-2C90-9DB96941ECD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7F7E56C-BA51-523D-2C90-9DB96941ECD1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD7C4120-3E5B-CAAE-C55E-42BEF869F048}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD7C4120-3E5B-CAAE-C55E-42BEF869F048}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD7C4120-3E5B-CAAE-C55E-42BEF869F048}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD7C4120-3E5B-CAAE-C55E-42BEF869F048}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																								GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

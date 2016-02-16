@@ -46,7 +46,7 @@ public class BossLock : MonoBehaviour {
 		//float newFloat = (float) num * (0.5f);
 
 		GameObject newEnemy = (GameObject) Instantiate (Resources.Load ("MiniBoss"));
-		audio.PlayOneShot (enemyspawn);
+		GetComponent<AudioSource>().PlayOneShot (enemyspawn);
 
 		newEnemy.layer = 10;
 		newEnemy.transform.position = new Vector2(transform.position.x - 4f, transform.position.y - 5f);

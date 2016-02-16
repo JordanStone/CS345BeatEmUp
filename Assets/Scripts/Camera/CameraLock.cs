@@ -57,7 +57,7 @@ public class CameraLock : MonoBehaviour {
 		//float newFloat = (float) num * (0.5f);
 
 		GameObject newEnemy = (GameObject) Instantiate (Resources.Load ("placeholderEnemy 1"));
-		audio.PlayOneShot (enemyspawn);
+		GetComponent<AudioSource>().PlayOneShot (enemyspawn);
 
 		newEnemy.layer = 10;
 		newEnemy.transform.position = new Vector2(transform.position.x + distance, transform.position.y);

@@ -97,11 +97,11 @@ public class Health : MonoBehaviour {
 		//this.gameObject.rigidbody2D.AddForce(new Vector2(d * forceCoefficient, 0f));
 		if( right)
 		{
-			this.gameObject.rigidbody2D.AddForce(new Vector2(d * forceCoefficient, 0f));
+			this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(d * forceCoefficient, 0f));
 		}
 		else
 		{
-			this.gameObject.rigidbody2D.AddForce(new Vector2(d * -forceCoefficient, 0f));
+			this.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(d * -forceCoefficient, 0f));
 		}
 
 		yield return new WaitForSeconds(colorTime);

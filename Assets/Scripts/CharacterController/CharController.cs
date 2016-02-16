@@ -74,7 +74,7 @@ public class CharController : MonoBehaviour{
 		
 		if(Input.GetButtonDown("Jump") && grounded){ //Jump
 			initiatePunch(0);
-			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
 			jump = true;
 		}
 
@@ -166,7 +166,7 @@ public class CharController : MonoBehaviour{
 	void FixedUpdate(){
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, groundType); //Are we on ground
 		anim.SetBool("ground",grounded); //Let the Animator Know
-		anim.SetFloat("vSpeed",rigidbody2D.velocity.y); //How fast are we going vertically
+		anim.SetFloat("vSpeed",GetComponent<Rigidbody2D>().velocity.y); //How fast are we going vertically
 		float move;
 		
 		if(!attackCool && !rolling)
@@ -184,7 +184,7 @@ public class CharController : MonoBehaviour{
 		anim.SetFloat("xSpeed",Mathf.Abs(move)); //How fast are we going horizontally
 
 
-		rigidbody2D.velocity = new Vector2(move * maxSpeed, rigidbody2D.velocity.y); //Take input and move object
+		GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y); //Take input and move object
 
 		//Orientation
 		if (move > 0 && !right){
@@ -196,7 +196,7 @@ public class CharController : MonoBehaviour{
 		//Jump Animation
 		if(jump){
 			anim.SetTrigger("jump");
-			audio.PlayOneShot (animsound4);
+			GetComponent<AudioSource>().PlayOneShot (animsound4);
 			jump = false;
 		}
 
@@ -303,10 +303,10 @@ public class CharController : MonoBehaviour{
 			damage = defaultDamage;
 			StartCoroutine(staminaCool());
 		} else if (i == 1) {
-			audio.PlayOneShot (animsound1);
+			GetComponent<AudioSource>().PlayOneShot (animsound1);
 		} else if (i == 2) {
 			damage = defaultDamage + damage/2;
-			audio.PlayOneShot (animsound2);
+			GetComponent<AudioSource>().PlayOneShot (animsound2);
 		} else if (i == 3) {
 			if(!tired)
 			{
@@ -315,7 +315,7 @@ public class CharController : MonoBehaviour{
 				StartCoroutine(staminaCool());
 			}
 			damage = defaultDamage * 2;
-			audio.PlayOneShot (animsound3);
+			GetComponent<AudioSource>().PlayOneShot (animsound3);
 		}
 	}
 

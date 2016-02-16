@@ -47,15 +47,15 @@ public class CharController3D : MonoBehaviour{
 
 		
 		if(Input.GetButtonDown("Jump") && grounded){ //Jump
-			rigidbody.AddForce(new Vector3(0f, jumpForce, 0f));
+			GetComponent<Rigidbody>().AddForce(new Vector3(0f, jumpForce, 0f));
 			jump = true;
 		}
 
 		if(Input.GetButtonDown("Fire1") && grounded){ //Roll
 			if (right){
-				rigidbody.AddForce(new Vector3(rollForce, 0f, 0f));
+				GetComponent<Rigidbody>().AddForce(new Vector3(rollForce, 0f, 0f));
 			}else{
-				rigidbody.AddForce(new Vector3(-rollForce, 0f, 0f));
+				GetComponent<Rigidbody>().AddForce(new Vector3(-rollForce, 0f, 0f));
 			}
 			roll = true;
 		}
@@ -97,13 +97,13 @@ public class CharController3D : MonoBehaviour{
 		//grounded = Physics.OverlapCircle(groundCheck.position, groundRadius, groundType); //Are we on ground
 		grounded = IsGrounded();
 		anim.SetBool("ground",grounded); //Let the Animator Know
-		anim.SetFloat("vSpeed",rigidbody.velocity.y); //How fast are we going vertically
+		anim.SetFloat("vSpeed",GetComponent<Rigidbody>().velocity.y); //How fast are we going vertically
 		
 		float move = Input.GetAxis ("Horizontal"); //Get horizontal input
 
 		anim.SetFloat("xSpeed",Mathf.Abs(move)); //How fast are we going horizontally
 
-		rigidbody.velocity = new Vector2(move * maxSpeed, rigidbody.velocity.y); //Take input and move object
+		GetComponent<Rigidbody>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody>().velocity.y); //Take input and move object
 
 		//Orientation
 		if (move > 0 && !right){

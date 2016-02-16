@@ -43,19 +43,19 @@ public class CameraBehavior : MonoBehaviour {
 			}
 		}
 		if(target && !lockActive){
-			Vector3 point = camera.WorldToViewportPoint(target.position);
+			Vector3 point = GetComponent<Camera>().WorldToViewportPoint(target.position);
 //			Debug.Log("Target.pos.Z = " + target.position.z);
 //			Debug.Log("Point.z = " + point.z);
-			Vector3 delta = target.position - camera.ViewportToWorldPoint(new Vector3(posX, posY, point.z));
+			Vector3 delta = target.position - GetComponent<Camera>().ViewportToWorldPoint(new Vector3(posX, posY, point.z));
 			Vector3 destination = transform.position + delta;
 			transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
 		}
 		if(lockActive && !lockSet){
 			tempOffset = new Vector3(0,0, lockDistance);
 			tempDest = transform.position - tempOffset;
-			xLockMin = camera.transform.position.x - cameraOffset;
-			xLockMax = camera.transform.position.x + cameraOffset;
-			yLock = camera.transform.position.y - cameraOffset;
+			xLockMin = GetComponent<Camera>().transform.position.x - cameraOffset;
+			xLockMax = GetComponent<Camera>().transform.position.x + cameraOffset;
+			yLock = GetComponent<Camera>().transform.position.y - cameraOffset;
 			wallLeft = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
 			wallRight = (GameObject) Instantiate (Resources.Load ("InvisibleWall"));
 			enemyReset = (GameObject) Instantiate (Resources.Load ("EnemyResetBox"));
